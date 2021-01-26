@@ -24,6 +24,10 @@ public class Student
         classGrades[2] = g3;
     }
 
+	public String getStudentName()
+			{
+				return name;
+			}
     public String getClassName(int num)
 			{
 				return classNames[num+1];
