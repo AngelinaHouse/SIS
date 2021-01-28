@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main
 	{
-		ArrayList<Student> studentList = new ArrayList<Student>();
+		static ArrayList<Student> studentList = new ArrayList<Student>();
 		public static void main(String[] args) throws IOException
 			{
 				System.out.println("Welcome to the SIS");
@@ -14,12 +14,11 @@ public class Main
 			//This method fills the student objects
 			
 			Scanner file = new Scanner(new File ("SIS Project Text File.txt"));
-			int times = file.nextInt();
+			
 			 
-			for (int i = 0; i <= times; i++)
+			while (file.hasNext())
 			{
-				studentList.add(i);
-				
+				studentList.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next()));
 			}
 		}
 
