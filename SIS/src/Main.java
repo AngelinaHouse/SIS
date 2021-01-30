@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main
 	{
-		static ArrayList<Student> studentList = new ArrayList<Student>();
+		public static ArrayList<Student> studentList = new ArrayList<Student>();
 		public static void main(String[] args) throws IOException
 			{
 				System.out.println("Welcome to the SIS");
@@ -18,7 +18,7 @@ public class Main
 			 
 			while (file.hasNext())
 			{
-				studentList.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next()));
+				studentList.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), 0.0));
 			}
 		}
 
