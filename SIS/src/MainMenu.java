@@ -43,6 +43,7 @@ public class MainMenu
 			else if (actionChoice == 3)
 				{
 					System.out.println("Lets sort the students");
+					sortMenu();
 				}
 			else
 				{
@@ -51,7 +52,7 @@ public class MainMenu
 			spacer();
 		}
 		
-		public static void SortMenu()
+		public static void sortMenu()
 		{
 			System.out.println("Here we can sort the students by last name, gpa, or classes. \n"
 					+ "Which would you like to do?");
@@ -59,6 +60,39 @@ public class MainMenu
 			System.out.println("\t 2.) Sort by GPA");
 			System.out.println("\t 3.) Sort by class");
 			
+			int sortChoice = userIntInput.nextInt();
+			
+			if (sortChoice == 1)
+				{
+					System.out.println("Lets sort by last name");
+					
+					//Collection.sort(Database.SISProjectTextFile, new NameSorter());
+				}
+			else if (sortChoice == 2)
+				{
+					System.out.println("Lets sort by GPA");
+				}
+			else if (sortChoice == 3)
+				{
+					System.out.println("Lets sort by class");	
+					classSorterMenu();
+				}
+			else
+				{
+					sortMenu();
+				}
+			spacer();
+			
+		}
+		
+		public static void classSorterMenu()
+		{
+			System.out.println("What class period would you like to sort by?");
+			System.out.println("\t 1.) period 1");
+			System.out.println("\t 2.) period 2");
+			System.out.println("\t 3.) period 3");
+			
+			int classSortChoice = userIntInput.nextInt();
 		}
 		
 		public static void spacer()
