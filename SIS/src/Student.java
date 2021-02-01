@@ -113,9 +113,9 @@ public class Student
 			return GPA;
 		}
 
-	public void setGPA(Double gPA)
+	public void setGPA(Double gpa)
 		{
-			GPA = gPA;
+			GPA = gpa;
 		}
 
     
