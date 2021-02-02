@@ -16,6 +16,8 @@ public class NewStudent {
 		System.out.println();
 		System.out.println("Let's start with the basic information");
 		System.out.println();
+		makeName();
+		///next stuff
 		
 	}
 	
