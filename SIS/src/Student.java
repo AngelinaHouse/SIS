@@ -15,7 +15,7 @@ public class Student
 
    private Double GPA;
    
-    public Student(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3, Double gpa)
+    public Student(String fn, String ln, String c1, String g1, String c2, String g2, String c3, String g3, double gpa)
     {
         firstName = fn;
         lastName = ln;
