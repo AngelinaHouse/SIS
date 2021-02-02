@@ -5,6 +5,7 @@ public class MainMenu
 	{
 		static Scanner userStringInput = new Scanner(System.in);
 		static Scanner userIntInput = new Scanner(System.in);
+		public static int classSortChoice; 
 
 		public static void main(String[] args)
 			{
@@ -66,11 +67,13 @@ public class MainMenu
 				{
 					System.out.println("Lets sort by last name");
 					
-					//Collection.sort(Database.SISProjectTextFile, new NameSorter());
+					Collections.sort(Main.studentList, new NameSorter());
 				}
 			else if (sortChoice == 2)
 				{
 					System.out.println("Lets sort by GPA");
+					
+					Collections.sort(Main.studentList, new GPASorter());
 				}
 			else if (sortChoice == 3)
 				{
@@ -92,7 +95,37 @@ public class MainMenu
 			System.out.println("\t 2.) period 2");
 			System.out.println("\t 3.) period 3");
 			
-			int classSortChoice = userIntInput.nextInt();
+			classSortChoice = userIntInput.nextInt();
+			
+			if (classSortChoice == 1)
+			{
+				System.out.println("Lets sort by period 1");
+				
+				Collections.sort(Main.studentList, new ClassSorter());
+			}
+		else if (classSortChoice == 2)
+			{
+				System.out.println("Lets sort by period 2");
+			}
+		else if (classSortChoice == 3)
+			{
+				System.out.println("Lets sort by period 3");	
+				classSorterMenu();
+			}
+		else
+			{
+				classSorterMenu();
+			}
+		spacer();
+		}
+		
+		public static void displayRoster()
+		{
+			for (int i = 0; i < Main.studentList.size(); i++)
+			{
+				System.out.println(Main.studentList);
+			}
+			
 		}
 		
 		public static void spacer()
