@@ -5,6 +5,7 @@ public class MainMenu
 	{
 		static Scanner userStringInput = new Scanner(System.in);
 		static Scanner userIntInput = new Scanner(System.in);
+		public static int classSortChoice; 
 
 		public static void main(String[] args)
 			{
@@ -43,6 +44,7 @@ public class MainMenu
 			else if (actionChoice == 3)
 				{
 					System.out.println("Lets sort the students");
+					sortMenu();
 				}
 			else
 				{
@@ -51,13 +53,78 @@ public class MainMenu
 			spacer();
 		}
 		
-		public static void SortMenu()
+		public static void sortMenu()
 		{
 			System.out.println("Here we can sort the students by last name, gpa, or classes. \n"
 					+ "Which would you like to do?");
 			System.out.println("\t 1.) Sort by last name");
 			System.out.println("\t 2.) Sort by GPA");
 			System.out.println("\t 3.) Sort by class");
+			
+			int sortChoice = userIntInput.nextInt();
+			
+			if (sortChoice == 1)
+				{
+					System.out.println("Lets sort by last name");
+					
+					Collections.sort(Main.studentList, new NameSorter());
+				}
+			else if (sortChoice == 2)
+				{
+					System.out.println("Lets sort by GPA");
+					
+					Collections.sort(Main.studentList, new GPASorter());
+				}
+			else if (sortChoice == 3)
+				{
+					System.out.println("Lets sort by class");	
+					classSorterMenu();
+				}
+			else
+				{
+					sortMenu();
+				}
+			spacer();
+			
+		}
+		
+		public static void classSorterMenu()
+		{
+			System.out.println("What class period would you like to sort by?");
+			System.out.println("\t 1.) period 1");
+			System.out.println("\t 2.) period 2");
+			System.out.println("\t 3.) period 3");
+			
+			classSortChoice = userIntInput.nextInt();
+			
+			if (classSortChoice == 1)
+			{
+				System.out.println("Lets sort by period 1");
+				
+				Collections.sort(Main.studentList, new ClassSorter());
+			}
+		else if (classSortChoice == 2)
+			{
+				System.out.println("Lets sort by period 2");
+			}
+		else if (classSortChoice == 3)
+			{
+				System.out.println("Lets sort by period 3");	
+				classSorterMenu();
+			}
+		else
+			{
+				classSorterMenu();
+			}
+		spacer();
+		}
+		
+		public static void displayRoster()
+		{
+			for (int i = 0; i < Main.studentList.size(); i++)
+			{
+				System.out.println(Main.studentList);
+			}
 			
 		}
 		
