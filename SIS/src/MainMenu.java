@@ -102,6 +102,7 @@ public class MainMenu
 				System.out.println("Lets sort by period 1");
 				
 				Collections.sort(Main.studentList, new ClassSorter());
+				displayRoster();
 			}
 		else if (classSortChoice == 2)
 			{
