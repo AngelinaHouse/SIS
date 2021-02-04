@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 
 public class NewStudent {
@@ -8,12 +9,8 @@ public class NewStudent {
 	protected static String [] classNames = new String [3];
 	protected static String [] classGrades = new String [3];
 
-	public static void addNewStudent()
+	public static void addNewStudent() throws IOException
 	{
-		
-		
-		
-		
 		System.out.println("Welcome to the New Student Portal");
 		System.out.println();
 		System.out.println();
@@ -31,8 +28,18 @@ public class NewStudent {
 		MainMenu.studentList.add(new Student(fName, lName, classNames[0], classGrades[0],classNames[1], classGrades[1],classNames[2], classGrades[2],0.0));
 		//
 		System.out.println();
-		System.out.println(MainMenu.studentList.get(MainMenu.studentList.size()-1) +" sucessfully created!");
+		System.out.println(MainMenu.studentList.get(MainMenu.studentList.size()-1).getFirstName() +"'s profile was sucessfully created!");
+		Main.gpaCalculator();
 		System.out.println();
+		System.out.println("Rerouting to Main Menu");
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		MainMenu.displayMainMenu();
 
 	}
 	

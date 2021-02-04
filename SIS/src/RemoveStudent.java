@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.util.*;
 
 public class RemoveStudent {
 
 	protected static Scanner uI = new Scanner (System.in);
-	public static void removeTheStudent()
+	public static void removeTheStudent() throws IOException
 	{
 		try 
 		{
@@ -21,11 +22,27 @@ public class RemoveStudent {
 					MainMenu.studentList.remove(i);
 				}
 			}
+			System.out.println();
+			System.out.println("Deletion Sucessful");
+			System.out.println();
+
+
+			
 		}
 		catch(Exception e)
 		{
 			System.out.println("Something went wrong, please try again");
 			removeTheStudent();
 		}
+		
+		System.out.println("Rerouting to Main Menu");
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		MainMenu.displayMainMenu();
 	}
 }
