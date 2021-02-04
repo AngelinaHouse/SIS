@@ -28,10 +28,10 @@ public class NewStudent {
 		}
 		
 		//
-		Main.studentList.add(new Student(fName, lName, classNames[0], classGrades[0],classNames[1], classGrades[1],classNames[2], classGrades[2],0.0));
+		MainMenu.studentList.add(new Student(fName, lName, classNames[0], classGrades[0],classNames[1], classGrades[1],classNames[2], classGrades[2],0.0));
 		//
 		System.out.println();
-		System.out.println(Main.studentList.get(Main.studentList.size()-1) +" sucessfully created!");
+		System.out.println(MainMenu.studentList.get(MainMenu.studentList.size()-1) +" sucessfully created!");
 		System.out.println();
 
 	}
