@@ -10,18 +10,19 @@ public class Main
 			//This method fills the student objects
 			
 			Scanner file = new Scanner(new File ("SIS Project Text File.txt"));
-			
 			 
 			while (file.hasNext())
 			{
 				MainMenu.studentList.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), 0.0));
 			}
+			
+			
 		}
 		
 		public static void gpaCalculator()
 			{
 
-				for (int i = 0; i <= MainMenu.studentList.size(); i++)
+				for (int i = 0; i < MainMenu.studentList.size(); i++)
 				{
 					double sum = 0;
 					double average = 0;
