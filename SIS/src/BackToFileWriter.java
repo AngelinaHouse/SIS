@@ -15,19 +15,19 @@ public class BackToFileWriter {
 	            // Note that write() does not automatically
 	            // append a newline character.
 	            
-	            for (int w = 0; w <Main.studentList.size(); w++)
+	            for (int w = 0; w <MainMenu.studentList.size(); w++)
 	            {
-	            	bufferedWriter.write(Main.studentList.get(w).getFirstName());
-	            	bufferedWriter.write(Main.studentList.get(w).getLastName());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getFirstName());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getLastName());
 	            	
-	            	bufferedWriter.write(Main.studentList.get(w).getClassName1());
-	            	bufferedWriter.write(Main.studentList.get(w).getClassGrade1());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getClassName1());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getClassGrade1());
 	            	
-	            	bufferedWriter.write(Main.studentList.get(w).getClassName2());
-	            	bufferedWriter.write(Main.studentList.get(w).getClassGrade2());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getClassName2());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getClassGrade2());
 	            	
-	            	bufferedWriter.write(Main.studentList.get(w).getClassName3());
-	            	bufferedWriter.write(Main.studentList.get(w).getClassGrade3());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getClassName3());
+	            	bufferedWriter.write(MainMenu.studentList.get(w).getClassGrade3());
 
 		            bufferedWriter.newLine();
 

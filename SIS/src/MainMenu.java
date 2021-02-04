@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class MainMenu
 	{
+		public static ArrayList<Student> studentList = new ArrayList<Student>();
 		static Scanner userStringInput = new Scanner(System.in);
 		static Scanner userIntInput = new Scanner(System.in);
 		public static int classSortChoice; 
@@ -29,11 +30,11 @@ public class MainMenu
 		
 		public static void displayRoster() throws IOException
 		{
-			Main.readTextFile();
 			
-			for (int i = 0; i < Main.studentList.size(); i++)
+			
+			for (int i = 0; i < studentList.size(); i++)
 			{
-				System.out.println(Main.studentList.getClass());
+				System.out.println(studentList.getClass());
 				
 			}
 			
@@ -93,13 +94,13 @@ public class MainMenu
 				{
 					System.out.println("Lets sort by last name");
 					
-					Collections.sort(Main.studentList, new NameSorter());
+					Collections.sort(studentList, new NameSorter());
 				}
 			else if (sortChoice == 2)
 				{
 					System.out.println("Lets sort by GPA");
 					
-					Collections.sort(Main.studentList, new GPASorter());
+					Collections.sort(studentList, new GPASorter());
 				}
 			else if (sortChoice == 3)
 				{
@@ -122,7 +123,7 @@ public class MainMenu
 			System.out.println("\t 3.) period 3");
 			
 			classSortChoice = userIntInput.nextInt();
-			Collections.sort(Main.studentList, new ClassSorter());
+			Collections.sort(studentList, new ClassSorter());
 			displayRoster();
 			
 //			
@@ -130,18 +131,18 @@ public class MainMenu
 //			{
 //				System.out.println("Lets sort by period 1");
 //				
-//				Collections.sort(Main.studentList, new ClassSorter());
+//				Collections.sort(studentList, new ClassSorter());
 //				displayRoster();
 //			}
 //		else if (classSortChoice == 2)
 //			{
 //				System.out.println("Lets sort by period 2");
-//				Collections.sort(Main.studentList, new ClassSorter());
+//				Collections.sort(studentList, new ClassSorter());
 //			}
 //		else if (classSortChoice == 3)
 //			{
 //				System.out.println("Lets sort by period 3");	
-//				Collections.sort(Main.studentList, new ClassSorter());
+//				Collections.sort(studentList, new ClassSorter());
 //			}
 //		else
 //			{

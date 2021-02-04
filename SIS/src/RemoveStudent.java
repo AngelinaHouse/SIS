@@ -14,11 +14,11 @@ public class RemoveStudent {
 			
 			String [] nameSplit = name.split(" ");
 			
-			for(int i = 0; i < Main.studentList.size(); i++)
+			for(int i = 0; i < MainMenu.studentList.size(); i++)
 			{
-				if(Main.studentList.get(i).getFirstName().equals(nameSplit[0]) && Main.studentList.get(i).getLastName().equals(nameSplit[1]))
+				if(MainMenu.studentList.get(i).getFirstName().equals(nameSplit[0]) && MainMenu.studentList.get(i).getLastName().equals(nameSplit[1]))
 				{
-					Main.studentList.remove(i);
+					MainMenu.studentList.remove(i);
 				}
 			}
 		}

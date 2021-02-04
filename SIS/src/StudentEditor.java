@@ -31,42 +31,42 @@ public class StudentEditor {
 
 		if (indexChoice == 1)
 		{
-			Main.studentList.get(indexChoice).setFirstName(editChoice);
+			MainMenu.studentList.get(indexChoice).setFirstName(editChoice);
 		}
 
 		else if (indexChoice == 2)
 		{
-			Main.studentList.get(indexChoice).setLastName(editChoice);
+			MainMenu.studentList.get(indexChoice).setLastName(editChoice);
 		}
 
 		else if (indexChoice == 3)
 		{
-			Main.studentList.get(indexChoice).setClassName1(editChoice);
+			MainMenu.studentList.get(indexChoice).setClassName1(editChoice);
 		}
 
 		else if (indexChoice == 4)
 		{
-			Main.studentList.get(indexChoice).setClassGrade1(editChoice);
+			MainMenu.studentList.get(indexChoice).setClassGrade1(editChoice);
 		}
 
 		else if (indexChoice == 5)
 		{
-			Main.studentList.get(indexChoice).setClassName2(editChoice);
+			MainMenu.studentList.get(indexChoice).setClassName2(editChoice);
 		}
 
 		else if (indexChoice == 6)
 		{
-			Main.studentList.get(indexChoice).setClassGrade2(editChoice);
+			MainMenu.studentList.get(indexChoice).setClassGrade2(editChoice);
 		}
 
 		else if (indexChoice == 7)
 		{
-			Main.studentList.get(indexChoice).setClassName3(editChoice);
+			MainMenu.studentList.get(indexChoice).setClassName3(editChoice);
 		}
 
 		else if (indexChoice == 8)
 		{
-			Main.studentList.get(indexChoice).setClassGrade3(editChoice);
+			MainMenu.studentList.get(indexChoice).setClassGrade3(editChoice);
 		}
 
 	}
