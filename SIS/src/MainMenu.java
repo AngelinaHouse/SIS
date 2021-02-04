@@ -1,5 +1,6 @@
 import java.util.*;
-import java.text.*;
+import java.io.IOException;
+
 
 public class MainMenu
 	{
@@ -7,9 +8,11 @@ public class MainMenu
 		static Scanner userIntInput = new Scanner(System.in);
 		public static int classSortChoice; 
 
-		public static void main(String[] args)
+		public static void main(String[] args) throws IOException
 			{
+				displayRoster();
 				welcome();
+				//displayRoster();
 				displayMainMenu();
 
 			}
@@ -24,7 +27,19 @@ public class MainMenu
 			
 		}
 		
-		public static void displayMainMenu()
+		public static void displayRoster() throws IOException
+		{
+			Main.readTextFile();
+			
+			for (int i = 0; i < Main.studentList.size(); i++)
+			{
+				System.out.println(Main.studentList.getClass());
+				
+			}
+			
+		}
+		
+		public static void displayMainMenu() throws IOException
 		{
 			System.out.println("What would you like to do?");
 			System.out.println("\t 1.) Add or delete a student");
@@ -36,6 +51,7 @@ public class MainMenu
 			if (actionChoice == 1)
 				{
 					System.out.println("Lets add or delete a student");
+					addDeleteMenu();
 				}
 			else if (actionChoice == 2)
 				{
@@ -53,7 +69,17 @@ public class MainMenu
 			spacer();
 		}
 		
-		public static void sortMenu()
+		public static void addDeleteMenu()
+		{
+			System.out.println("Would you like to add or delete a student?");
+		}
+		
+		public static void editStudentMenu()
+		{
+			System.out.println("Would you like to change a ");
+		}
+		
+		public static void sortMenu() throws IOException
 		{
 			System.out.println("Here we can sort the students by last name, gpa, or classes. \n"
 					+ "Which would you like to do?");
@@ -88,7 +114,7 @@ public class MainMenu
 			
 		}
 		
-		public static void classSorterMenu()
+		public static void classSorterMenu() throws IOException
 		{
 			System.out.println("What class period would you like to sort by?");
 			System.out.println("\t 1.) period 1");
@@ -96,38 +122,34 @@ public class MainMenu
 			System.out.println("\t 3.) period 3");
 			
 			classSortChoice = userIntInput.nextInt();
+			Collections.sort(Main.studentList, new ClassSorter());
+			displayRoster();
 			
-			if (classSortChoice == 1)
-			{
-				System.out.println("Lets sort by period 1");
-				
-				Collections.sort(Main.studentList, new ClassSorter());
-				displayRoster();
-			}
-		else if (classSortChoice == 2)
-			{
-				System.out.println("Lets sort by period 2");
-			}
-		else if (classSortChoice == 3)
-			{
-				System.out.println("Lets sort by period 3");	
-				classSorterMenu();
-			}
-		else
-			{
-				classSorterMenu();
-			}
+//			
+//			if (classSortChoice == 1)
+//			{
+//				System.out.println("Lets sort by period 1");
+//				
+//				Collections.sort(Main.studentList, new ClassSorter());
+//				displayRoster();
+//			}
+//		else if (classSortChoice == 2)
+//			{
+//				System.out.println("Lets sort by period 2");
+//				Collections.sort(Main.studentList, new ClassSorter());
+//			}
+//		else if (classSortChoice == 3)
+//			{
+//				System.out.println("Lets sort by period 3");	
+//				Collections.sort(Main.studentList, new ClassSorter());
+//			}
+//		else
+//			{
+//				classSorterMenu();
+//			}
 		spacer();
 		}
 		
-		public static void displayRoster()
-		{
-			for (int i = 0; i < Main.studentList.size(); i++)
-			{
-				System.out.println(Main.studentList);
-			}
-			
-		}
 		
 		public static void spacer()
 		{
